@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовые задания</title>
+    {% load static %}
+    {% load i18n %}
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="{% url 'task_list' %}" class="nav-link">Список задач</a>
+            <a href="{% url 'task_create' %}" class="nav-link">Создать задачу</a>
+            <a href="{% url 'test_tasks' %}" class="nav-link">Тестовые задания</a>
+        </nav>
+
+        <h1>Тестовые задания</h1>
+
+        <!-- Задача 1: Ввод массива -->
+        <div>
+            <h2>Задача №1</h2>
+            <p>Дан одномерный массив А размерности N. Найти сумму отрицательных элементов, расположенных между максимальным и минимальным.</p>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="array_input">Введите массив (через запятую):</label>
+                <input type="text" id="array_input" name="array_input" required>
+                <button type="submit" name="task_1">Решить задачу 1</button>
+            </form>
+            {% if result_1 %}
+                <h3>Результат задачи 1: {{ result_1 }}</h3>
+            {% endif %}
+            {% if steps_1 %}
+                <h4>Шаги задачи 1:</h4>
+                <ul>
+                    {% for step in steps_1 %}
+                        <li>{{ step }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <!-- Задача 2: Демонстрация работы классов -->
+        <div>
+            <h2>Задача №2</h2>
+            <p>Написать тестовую программу, которая демонстрирует работу методов базового и производного классов.</p>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" name="task_2">Решить задачу 2</button>
+            </form>
+            {% if result_2 %}
+                <h3>Результат задачи 2: {{ result_2 }}</h3>
+            {% endif %}
+            {% if steps_2 %}
+                <h4>Шаги задачи 2:</h4>
+                <ul>
+                    {% for step in steps_2 %}
+                        <li>{{ step }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

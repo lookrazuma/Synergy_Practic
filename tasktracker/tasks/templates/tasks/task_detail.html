@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% load i18n %}{% trans "Детали задачи" %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="{% url 'task_list' %}" class="nav-link">{% trans "Список задач" %}</a>
+            <a href="{% url 'task_create' %}" class="nav-link">{% trans "Создать задачу" %}</a>
+            <a href="{% url 'test_tasks' %}" class="nav-link">{% trans "Тестовые задания" %}</a>
+        </nav>
+
+        
+    </div>
+    <div class="container">
+        <h1>{% trans "Детали задачи" %}</h1>
+        <div class="task-details">
+            <h2>{{ task.title }}</h2>
+            <p><strong>{% trans "Описание" %}:</strong> {{ task.description }}</p>
+            <p><strong>{% trans "Приоритет" %}:</strong> {{ task.get_priority_display }}</p>
+            <p><strong>{% trans "Статус" %}:</strong> {{ task.get_status_display }}</p>
+            <p><strong>{% trans "Ответственный" %}:</strong> {{ task.assigned_to }}</p>
+            <p><strong>{% trans "Дата выполнения" %}:</strong> {{ task.due_date }}</p>
+            <p><strong>{% trans "Завершено" %}:</strong> {{ task.completed }}</p>
+        </div>
+        <a href="{% url 'task_list' %}" class="btn">{% trans "Назад к списку задач" %}</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* Общий стиль для контейнера */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Заголовки */
+h1, h2 {
+    color: #b22222; /* Красный оттенок */
+    margin-bottom: 20px;
+}
+
+/* Навигационная панель */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #ffe4e1; /* Светлый красный оттенок */
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #b22222;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #b22222;
+    color: #fff;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #b22222;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #8b0000; /* Более темный красный */
+}
+
+/* Детали задачи */
+.task-details {
+    background-color: #fdf5f5; /* Светлый оттенок */
+    padding: 15px;
+    border: 1px solid #f4cccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.task-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.task-details strong {
+    color: #8b0000;
+}
+
+/* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+form button {
+    align-self: flex-start;
+}
+/* Стиль для формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff5f5; /* Светлый красный оттенок */
+    border: 1px solid #f4cccc; /* Красноватая рамка */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Поля формы */
+form input, form textarea, form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #b22222; /* Красный оттенок */
+}
+
+/* Кнопки */
+form button {
+    background-color: #b22222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #8b0000; /* Темный красный */
+}
+
+/* Ссылки */
+a.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #b22222;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover {
+    background-color: #8b0000;
+}
+
+/* Заголовки */
+h1 {
+    color: #b22222;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Список задач */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff5f5; /* Светлый красный оттенок */
+    border: 1px solid #f4cccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #b22222;
+    margin-bottom: 5px;
+}
+
+.task-priority, .task-status, .task-assigned, .task-due-date {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Кнопки для задач */
+.task-item .btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #b22222;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.task-item .btn:hover {
+    background-color: #8b0000;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.step-links a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #b22222;
+    color: #fff;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.step-links a:hover {
+    background-color: #8b0000;
+}
+
+.step-links .current {
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #333;
+}
+.task-title-link {
+    text-decoration: none;
+    color: #b22222;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.task-title-link:hover {
+    color: #8b0000;
+}

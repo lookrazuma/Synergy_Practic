@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% load i18n %}{% trans "Форма задачи" %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar">
+            <a href="{% url 'task_list' %}" class="nav-link">{% trans "Список задач" %}</a>
+            <a href="{% url 'task_create' %}" class="nav-link">{% trans "Создать задачу" %}</a>
+            <a href="{% url 'test_tasks' %}" class="nav-link">{% trans "Тестовые задания" %}</a>
+        </nav>
+
+        <h1>{% trans "Создать задачу" %}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">{% trans "Сохранить задачу" %}</button>
+        </form>
+        <a href="{% url 'task_list' %}" class="btn">{% trans "Назад к списку задач" %}</a>
+    </div>
+</body>
+</html>

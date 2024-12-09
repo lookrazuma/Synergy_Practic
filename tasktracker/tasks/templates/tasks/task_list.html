@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% load i18n %}{% trans "Список задач" %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="{% url 'task_list' %}" class="nav-link">{% trans "Список задач" %}</a>
+            <a href="{% url 'task_create' %}" class="nav-link">{% trans "Создать задачу" %}</a>
+            <a href="{% url 'test_tasks' %}" class="nav-link">{% trans "Тестовые задания" %}</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>{% trans "Список задач" %}</h1>
+        <a href="{% url 'task_create' %}" class="btn">{% trans "Создать новую задачу" %}</a>
+
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="task-item">
+                    <div class="task-content">
+                        <!-- Ссылка на страницу деталей задачи -->
+                        <a href="{% url 'task_detail' task.pk %}" class="task-title-link">
+                            <span class="task-title">{{ task.title }}</span>
+                        </a>
+                        <span class="task-priority">{% trans "Приоритет" %}: {{ task.get_priority_display }}</span>
+                        <span class="task-status">{% trans "Статус" %}: {{ task.get_status_display }}</span>
+                        <span class="task-assigned">{% trans "Ответственный" %}: {{ task.assigned_to }}</span>
+                        <span class="task-due-date">{% trans "Дата выполнения" %}: {{ task.due_date }}</span>
+                    </div>
+                    <a href="{% url 'task_edit' task.pk %}" class="btn">{% trans "Редактировать" %}</a>
+                    <a href="{% url 'task_delete' task.pk %}" class="btn">{% trans "Удалить" %}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if tasks.has_previous %}
+                    <a href="?page=1">&laquo; {% trans "Первая" %}</a>
+                    <a href="?page={{ tasks.previous_page_number }}">{% trans "Предыдущая" %}</a>
+                {% endif %}
+
+                <span class="current">
+                    {% trans "Страница" %} {{ tasks.number }} {% trans "из" %} {{ tasks.paginator.num_pages }}.
+                </span>
+
+                {% if tasks.has_next %}
+                    <a href="?page={{ tasks.next_page_number }}">{% trans "Следующая" %}</a>
+                    <a href="?page={{ tasks.paginator.num_pages }}">{% trans "Последняя" %} &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</body>
+</html>
