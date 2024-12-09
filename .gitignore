@@ -1,5 +1,5 @@
 
-__pycache__/
+tasktracker/tasks/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -8,7 +8,7 @@ __pycache__/
 myenv/
 env/
 
-db.sqlite3
+tasktracker/db.sqlite3
 *.log
 *.pot
 *.py[co]
