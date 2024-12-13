@@ -9,6 +9,7 @@
 ```bash
 git clone https://github.com/lookrazuma/Synergy_Practic.git
 cd Synergy_Practic
+```
 
 ## Активация окружения:
 ```bash
